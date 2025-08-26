@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing.git #./app
+      dockerfile: Dockerfile
+      target: runner
+    env_file:
+      - ./.env
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_STRAPI_URL: http://strapi:1337
+      NEXT_PUBLIC_STRAPI_ASSETS_URL: ${NEXT_PUBLIC_STRAPI_ASSETS_URL}
+      STRAPI_API_TOKEN: ${STRAPI_API_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+    depends_on:
+      - strapi
+    ports:
+      - "9000:3000"
+    restart: unless-stopped
+
+  strapi:
+    build:
+      context: https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing-strapi.git #./strapi
+      dockerfile: Dockerfile
+      target: runner
+    env_file:
+      - ./strapi/.env
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "1337:1337"
+    restart: unless-stopped
