@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "problems",
+  "info": {
+    "singularName": "problem",
+    "pluralName": "problems",
+    "displayName": "Problem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "cards": {
+      "type": "component",
+      "component": "my.problem-card",
+      "repeatable": true,
+      "required": true,
+      "min": 3
+    }
+  }
+}

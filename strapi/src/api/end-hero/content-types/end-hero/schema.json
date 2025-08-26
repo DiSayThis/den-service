@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "end_heroes",
+  "info": {
+    "singularName": "end-hero",
+    "pluralName": "end-heroes",
+    "displayName": "endHero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}

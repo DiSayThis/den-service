@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "demo_slideshows",
+  "info": {
+    "singularName": "demo-slideshow",
+    "pluralName": "demo-slideshows",
+    "displayName": "demoSlideshow"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.divider {
+	background-color: var(--border-color, rgb(0, 0, 0, 0.08));
+	flex-shrink: 0;
+	box-sizing: border-box;
+}
+
+/* горизонтальная */
+.divider:not(.vertical) {
+	height: 1px;
+	width: calc(100% - var(--divider-vertical-gap, 8px) * 2);
+	margin: 0 var(--divider-vertical-gap, 8px);
+}
+
+/* вертикальная по-умолчанию: тонкая и растягивается */
+.vertical {
+	width: 1px;
+	margin: var(--divider-horizontal-gap, 16px) 0;
+	align-self: stretch; /* ключевое правило */
+	height: auto;
+}

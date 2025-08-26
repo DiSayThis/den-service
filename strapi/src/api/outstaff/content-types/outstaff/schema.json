@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "outstaffs",
+  "info": {
+    "singularName": "outstaff",
+    "pluralName": "outstaffs",
+    "displayName": "Outstaff"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "outstaffCards": {
+      "type": "component",
+      "component": "my.outstaff-card",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

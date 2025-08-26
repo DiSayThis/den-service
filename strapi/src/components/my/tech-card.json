@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_my_tech_cards",
+  "info": {
+    "displayName": "techCard",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

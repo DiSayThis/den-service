@@ -1,0 +1,126 @@
+.outstaff {
+	position: relative;
+	padding: 0;
+	min-height: 0;
+	border-radius: var(--border-radius);
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		gap: 40px;
+		margin-bottom: 2rem;
+	}
+
+	&__left {
+		flex: 1;
+		width: 60%;
+		z-index: 1;
+
+		@media (width<=768px) {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		position: relative;
+		flex: 1;
+		display: flex;
+		min-width: 300px;
+
+		@media (width<=768px) {
+			display: none;
+		}
+	}
+
+	&__title {
+		font-size: 32px;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		margin-bottom: 24px;
+		line-height: 1.4;
+	}
+
+	&__tabs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-bottom: 20px;
+	}
+
+	&__tab {
+		padding: 10px 18px;
+		border-radius: 6px;
+		background: var(--bg-secondary);
+		color: var(--foreground);
+		border: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: var(--hover-bg-secondary);
+		}
+
+		&--active {
+			background: var(--bg-primary);
+			color: var(--white);
+
+			&:hover {
+				background: var(--hover-bg-primary);
+			}
+		}
+	}
+
+	.calculator {
+		margin-top: 2rem;
+	}
+
+	&__contentWrapper {
+		position: relative;
+		display: grid;
+	}
+
+	&__content {
+		max-width: 100%;
+		line-height: 1.5;
+		grid-area: 1 / 1; // все накладываются в одну ячейку
+		transition:
+			opacity 0.5s ease,
+			transform 0.5s ease;
+
+		.content__title {
+			font-size: 1.25rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__tech {
+		margin-top: 1rem;
+	}
+
+	&__imageWrapper {
+		flex: 1; // тянется по высоте родителя
+		display: flex;
+		height: 100%;
+		width: 100%;
+		min-height: 600px;
+		min-width: 40%;
+
+		@media (width<=768px) {
+			min-width: 100px;
+		}
+	}
+
+	&__image {
+		min-height: 900px;
+		width: 100%;
+		height: auto;
+		border-radius: 12px;
+		object-fit: cover;
+		box-shadow: 0 4px 20px rgb(0, 0, 0, 0.1);
+	}
+}

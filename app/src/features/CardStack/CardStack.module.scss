@@ -1,0 +1,11 @@
+.container {
+	position: relative;
+}
+
+.card {
+	background-color: var(--background);
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: fit-content;
+}

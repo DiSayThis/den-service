@@ -1,0 +1,7 @@
+/**
+ * modal-kp router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::modal-kp.modal-kp');

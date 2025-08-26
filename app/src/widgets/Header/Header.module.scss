@@ -1,0 +1,50 @@
+.header {
+	position: fixed; // вместо sticky
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	padding: 5px 0;
+	transition:
+		background 0.4s ease,
+		backdrop-filter 0.4s ease,
+		box-shadow 0.4s ease;
+	background: transparent;
+	backdrop-filter: none;
+}
+
+.scrolled {
+	// полупрозрачный фон + блюр
+	background: rgb(255, 255, 255, 0.6);
+	backdrop-filter: blur(10px);
+
+	// для тёмной темы — потемнее фон
+	[data-theme='dark'] & {
+		background: rgb(var(--background), 0.6);
+	}
+
+	box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
+}
+
+.container__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+.button-theme {
+	width: fit-content !important;
+	height: fit-content !important;
+}
+
+.logo {
+	max-width: 40px;
+	max-height: 40px;
+}
+
+[data-theme='dark'] {
+	.logo {
+		filter: grayscale(1) invert(1);
+	}
+}

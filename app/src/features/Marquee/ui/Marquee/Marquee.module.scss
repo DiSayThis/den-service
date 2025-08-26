@@ -1,0 +1,44 @@
+.container {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 50px; // ширина зоны фейда
+		height: 100%;
+		pointer-events: none; // чтобы не блокировало drag
+		z-index: 2;
+	}
+
+	&::before {
+		left: 0;
+		background: linear-gradient(to right, var(--background), rgb(255, 255, 255, 0));
+	}
+
+	&::after {
+		right: 0;
+		background: linear-gradient(to left, var(--background), rgb(255, 255, 255, 0));
+	}
+}
+
+.inner {
+	display: flex;
+	flex-wrap: nowrap;
+	cursor: grab;
+}
+
+.line {
+	display: flex;
+	gap: 2rem;
+	padding-block: 1rem;
+	cursor: grab;
+	align-items: center;
+
+	&:active {
+		cursor: grabbing;
+	}
+}

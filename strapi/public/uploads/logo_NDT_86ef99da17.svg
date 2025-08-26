@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 449.51 441.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #399a6d;
+        stroke: #399a6d;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #faa719;
+        stroke: #faa719;
+      }
+
+      .cls-3 {
+        fill: #4c9e78ff;
+        stroke: #4c9e78ff;
+      }
+
+      .cls-5 {
+        fill: #e5fef8;
+      }
+
+      .cls-4 {
+        fill: #fcb414;
+        stroke: #fcb414;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="113.02 .8 224.02 55.32 113.02 109.94 113.02 .8"/>
+  <polygon class="cls-1" points="225.24 55.92 336.23 110.44 225.24 165.06 225.24 55.92"/>
+  <polygon class="cls-1" points="337.39 110.99 448.38 165.5 337.39 220.12 337.39 110.99"/>
+  <polygon class="cls-1" points="337.39 221.12 448.38 275.64 337.39 330.26 337.39 221.12"/>
+  <polygon class="cls-3" points="336.81 221.12 225.81 275.64 336.81 330.26 336.81 221.12"/>
+  <polygon class="cls-4" points="336.81 331.39 225.81 385.9 336.81 440.52 336.81 331.39"/>
+  <polygon class="cls-4" points="224.45 276.28 113.46 330.8 224.45 385.42 224.45 276.28"/>
+  <polygon class="cls-4" points="112.12 221.17 1.13 275.68 112.12 330.3 112.12 221.17"/>
+  <polygon class="cls-4" points="112.26 110.99 1.26 165.5 112.26 220.12 112.26 110.99"/>
+  <polygon class="cls-2" points="113.02 110.99 224.02 165.5 113.02 220.12 113.02 110.99"/>
+  <polygon class="cls-2" points="112.89 221.17 223.89 275.68 112.89 330.3 112.89 221.17"/>
+  <polygon class="cls-2" points=".7 166 111.69 220.51 .7 275.13 .7 166"/>
+  <polygon class="cls-2" points="225.21 276.28 336.2 330.8 225.21 385.42 225.21 276.28"/>
+  <polygon class="cls-3" points="336.75 110.99 225.75 165.5 336.75 220.12 336.75 110.99"/>
+  <polygon class="cls-3" points="448.82 166.06 337.83 220.58 448.82 275.19 448.82 166.06"/>
+  <polygon class="cls-3" points="224.45 55.92 113.46 110.44 224.45 165.06 224.45 55.92"/>
+</svg>

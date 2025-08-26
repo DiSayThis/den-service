@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_my_service_cards",
+  "info": {
+    "displayName": "serviceCard",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "features": {
+      "type": "json"
+    },
+    "artifacts": {
+      "type": "json"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "extras": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}

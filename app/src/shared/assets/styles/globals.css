@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+@import './normalize.css';
+@import '../fonts/Nunito/NunitoFont.css';
+@import '../fonts/BebasNeueCyrillic/BebasNeueCyrillicFont.css';
+@import '../fonts/Oswald/OswaldFont.css';
+@import '../fonts/Inter/InterFont.css';
+@import '../fonts/Montserrat/MontserratFont.css';
+@import '../fonts/Circe/CirceFont.css';
+
+:root {
+	/* Цветовая схема */
+	--white: #eee;
+	--gray: #888;
+	--black: #222;
+	--bg-primary: #399a6d;
+	--bg-secondary: #c3d1cc;
+	--bg-secondary-dark: #2d3331;
+	--hover-secondary-dark: #404845;
+	--hover-white: #fff;
+
+	/* Шрифты */
+	--font-size: 0.875rem;
+	--font-headings-spacing: 1px;
+	--font-heading: 'Montserrat', 'Circe', sans-serif;
+	--font-body: 'Nunito', sans-serif;
+
+	/* используемые цвета */
+	--background: var(--white);
+	--foreground: var(--black);
+	--label-color: var(--gray);
+	--border-color: #212121cc;
+	--filter-image-light: brightness(0.2) saturate(100%) sepia(0.5) hue-rotate(180deg);
+	--filter-image-dark: brightness(0.2) saturate(100%) invert(1) sepia(1) hue-rotate(180deg);
+	--filter-image: var(--filter-image-light);
+
+	/* Информационные цвета */
+	--bg-warning: #ff9800;
+	--hover-bg-warning: #fb8c00;
+	--bg-info: #4da6ff;
+	--hover-bg-info: #1e88e5;
+	--bg-error: #f44336;
+	--hover-bg-error: #e53935;
+	--bg-success: #4caf50;
+	--hover-bg-success: #43a047;
+
+	/* hover цвета */
+	--hover-bg-primary: #46be86;
+	--hover-bg-secondary: #d4e5df;
+	--hover-white-button: #d2d2d2;
+	--hover-text-color: #5c5c5c;
+
+	/* disable цвета */
+	--bg-disabled: var(--gray);
+	--disabled-text-color: var(--black);
+
+	/* Размеры */
+	--border-radius: 15px;
+	--margin: 1.875rem;
+
+	@media (width <= 768px) {
+		--border-radius: 15px;
+	}
+}
+
+[data-theme='dark'] {
+	--background: var(--black);
+	--foreground: var(--white);
+	--hover-white: var(--hover-white-button);
+	--hover-white-button: #313131;
+	--bg-secondary: var(--bg-secondary-dark);
+	--hover-bg-secondary: var(--hover-secondary-dark);
+	--hover-text-color: #b6b6b6;
+	--filter-image: var(--filter-image-dark);
+	--border-color: #eeeeeed4;
+}
+
+html {
+	font-size: 16px; /* базовый размер шрифта */
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-body);
+	line-height: 1.5;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-heading);
+		font-weight: 700;
+	}
+
+	h1 {
+		font-size: 4rem;
+
+		@media (width <= 768px) {
+			font-size: 2rem;
+		}
+	}
+
+	h2 {
+		font-size: 2.25rem;
+
+		@media (width <= 768px) {
+			font-size: 1.5rem;
+		}
+	}
+}

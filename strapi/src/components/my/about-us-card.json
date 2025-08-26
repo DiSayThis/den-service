@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_my_about_us_cards",
+  "info": {
+    "displayName": "AboutUsCard",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "iconName": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    }
+  },
+  "config": {}
+}

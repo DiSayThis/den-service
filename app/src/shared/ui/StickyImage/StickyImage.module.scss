@@ -1,0 +1,9 @@
+.container__image {
+	position: sticky;
+	top: 60px;
+	height: calc(100vh - 20px);
+	color: var(--white) !important;
+	z-index: 0;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+}

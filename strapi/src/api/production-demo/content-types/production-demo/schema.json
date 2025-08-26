@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "production_demos",
+  "info": {
+    "singularName": "production-demo",
+    "pluralName": "production-demos",
+    "displayName": "ProductionDemo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.logo {
+	position: relative;
+	flex-shrink: 0;
+	width: 80px;
+}
+
+.image {
+	aspect-ratio: initial;
+	filter: var(--filter-image);
+}

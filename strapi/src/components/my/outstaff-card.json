@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_my_outstaff_cards",
+  "info": {
+    "displayName": "outstaffCard",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "calculation": {
+      "type": "json"
+    },
+    "techCards": {
+      "type": "component",
+      "component": "my.tech-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

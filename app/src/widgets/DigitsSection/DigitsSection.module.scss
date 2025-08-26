@@ -1,0 +1,29 @@
+.section {
+	display: block;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch; /* <- важно: позволяем детям иметь высоту */
+	gap: 8px;
+
+	@media (width <= 768px) {
+		flex-direction: column;
+		align-items: center; /* в колонке центруем по ширине */
+	}
+}
+
+.values {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* контент по центру вертикали — divider растянется на высоту этого блока */
+	min-width: 160px; /* опционально: чтобы значения не прыгали */
+	padding: 1rem;
+
+	.digit {
+		font-size: 3.75rem;
+	}
+}

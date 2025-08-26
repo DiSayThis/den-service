@@ -1,0 +1,84 @@
+.section {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* overflow: hidden; */
+	min-height: 500px;
+
+	@media (width <= 768px) {
+		flex-direction: column;
+		min-height: unset;
+	}
+}
+
+.text-block {
+	z-index: 1;
+	width: 50%;
+	cursor: default;
+
+	> * {
+		margin-bottom: 30px;
+	}
+
+	@media (width <= 768px) {
+		width: 100%;
+	}
+}
+
+.title {
+	@media (width <= 768px) {
+		font-size: 2rem;
+	}
+}
+
+.description {
+	line-height: 1.6;
+	font-size: 1.25rem;
+
+	@media (width <= 768px) {
+		font-size: 1rem;
+	}
+}
+
+.button {
+	padding: 10px 20px;
+	font-size: 1.25rem;
+
+	@media (width <= 768px) {
+		padding: 0;
+		font-size: 1rem;
+	}
+}
+
+.image-container {
+	position: absolute;
+	inset: 0;
+	left: 40%;
+	width: 60%;
+	height: 100%;
+
+	// Мягкая растушёвка левого края
+	mask-image:
+		linear-gradient(to right, transparent 0%, var(--background) 60%, transparent 100%),
+		linear-gradient(to bottom, transparent 0%, var(--background) 60%, transparent 100%);
+	mask-composite: destination-in;
+	mask-composite: intersect;
+
+	/* fallback для Firefox */
+	mask-repeat: no-repeat;
+	mask-size: cover;
+
+	@media (width <= 768px) {
+		left: 50%;
+		width: 50%;
+		height: 50%;
+	}
+}
+
+.hero-image {
+	object-fit: cover;
+	object-position: center;
+	border-radius: 12px;
+}

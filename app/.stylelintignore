@@ -1,0 +1,15 @@
+*.tsx
+*.jsx
+*.ts
+*.js
+*.сjs
+*.md
+*.svg
+/node_modules
+.husky
+.next
+.vscode
+eslint.config.mjs
+postcss.config.mjs
+.prettierrc.cjs
+stylelint.config.cjs

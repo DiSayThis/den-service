@@ -1,0 +1,168 @@
+.services {
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	// Tabs
+	&__tabs {
+		margin-top: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		width: 100%;
+
+		@media (width <= 600px) {
+			.services__tab {
+				width: 100%;
+			}
+		}
+	}
+
+	&__tab--active {
+		background-color: var(--bg-primary) !important;
+		color: var(--white) !important;
+
+		&:hover {
+			background-color: var(--hover-bg-primary) !important;
+		}
+	}
+
+	// Content wrapper
+	&__text_container {
+		position: relative;
+		width: 100%;
+		display: grid;
+	}
+
+	&__content {
+		position: relative;
+		overflow: hidden;
+		margin-top: 1rem;
+		display: flex;
+		gap: 1rem;
+
+		@media (width <= 768px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	// Image
+	&__imageWrapper {
+		position: relative;
+		overflow: hidden;
+		width: 400px;
+		min-width: 400px;
+		min-height: 400px;
+		height: 100%;
+
+		@media (width <= 950px) {
+			min-width: 300px;
+		}
+	}
+
+	&__image_container {
+		position: relative;
+
+		@media (width <= 768px) {
+			min-width: 400px;
+			min-height: 400px;
+			height: 100%;
+		}
+	}
+
+	&__image {
+		object-fit: cover;
+		border-radius: var(--border-radius);
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	grid-area: 1/1;
+
+	// Headings
+	&__title {
+		font-size: 1.75rem;
+	}
+
+	&__sub {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	// Text
+	&__text {
+		font-size: 1.15rem;
+	}
+
+	// Cards wrapper
+	&__cards {
+		display: flex;
+		gap: 1rem;
+		width: 100%;
+		height: 100%;
+
+		@media (width <= 600px) {
+			flex-direction: column;
+		}
+
+		// Чтобы все карточки тянулись
+		> * {
+			width: 100%;
+		}
+	}
+
+	// Card extras
+	.card__extras {
+		position: relative;
+		max-width: 300px;
+		width: 100%;
+
+		@media (width <= 600px) {
+			max-width: none;
+		}
+	}
+
+	// Lists
+	&__list_wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		width: 100%;
+		height: 100%;
+
+		.card {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		width: 100%;
+	}
+
+	// Items
+	.feature,
+	.artifact {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		svg {
+			min-width: 20px;
+			min-height: 20px;
+		}
+	}
+
+	.feature {
+		svg {
+			color: var(--bg-primary);
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_my_problem_cards",
+  "info": {
+    "displayName": "problemCard",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "solution": {
+      "type": "text"
+    },
+    "iconName": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

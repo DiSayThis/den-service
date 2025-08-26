@@ -1,0 +1,15 @@
+.screen {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	background-color: var(--background);
+}
+
+.image {
+	display: block;
+	height: 300px; // фиксируем высоту ленты
+	object-fit: cover; // обрезаем
+	object-position: top; // всегда показываем верх картинки
+	border-radius: 8px;
+}

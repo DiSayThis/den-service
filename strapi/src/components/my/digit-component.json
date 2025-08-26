@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_my_digit_components",
+  "info": {
+    "displayName": "digitComponent"
+  },
+  "options": {},
+  "attributes": {
+    "digit": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "addText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

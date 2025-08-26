@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "digits",
+  "info": {
+    "singularName": "digit",
+    "pluralName": "digits",
+    "displayName": "digit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "digits": {
+      "type": "component",
+      "component": "my.digit-component",
+      "repeatable": true
+    }
+  }
+}

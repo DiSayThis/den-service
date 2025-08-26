@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "call_to_action2s",
+  "info": {
+    "singularName": "call-to-action2",
+    "pluralName": "call-to-action2s",
+    "displayName": "CallToAction2"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}

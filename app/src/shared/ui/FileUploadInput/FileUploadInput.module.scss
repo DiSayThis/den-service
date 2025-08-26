@@ -1,0 +1,46 @@
+/* stylelint-disable selector-class-pattern */
+.fileUploadInput {
+	display: block;
+}
+
+.fileInput {
+	display: none;
+}
+
+.fileName {
+	display: block;
+	width: calc(100% - 0.5rem);
+	font-size: 0.75rem;
+}
+
+.buttonBox {
+	display: flex;
+}
+
+.submitButton {
+	width: 100%;
+	margin-top: 0.25rem;
+}
+
+.fileButton {
+	width: 100%;
+	min-height: 200px;
+	align-items: center;
+	border: 1px dashed var(--foreground);
+
+	@media (width <= 768px) {
+		min-height: 100px;
+	}
+}
+
+.clearButton {
+	width: fit-content;
+	margin-left: 0.5rem;
+}
+
+.error {
+	display: block;
+	width: calc(100% - 0.5rem);
+	font-size: 0.75rem;
+	color: var(--error-color);
+}
