@@ -2,7 +2,7 @@ version: "3.9"
 services:
   web:
     build:
-      context: ./app #https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing.git #./app
+      context: https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing.git #./app
       dockerfile: Dockerfile
       target: runner
     env_file:
@@ -22,7 +22,7 @@ services:
 
   strapi:
     build:
-      context: ./strapi #https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing-strapi.git #./strapi
+      context: https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing-strapi.git #./strapi
       dockerfile: Dockerfile
       target: runner
     env_file:
