@@ -15,7 +15,7 @@ services:
     depends_on:
       - strapi
     ports:
-      - "8080:3000"
+      - "9000:3000"
     restart: unless-stopped
 
   strapi:
