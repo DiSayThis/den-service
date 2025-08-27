@@ -31,7 +31,8 @@ function normalizeImages<T>(data: T): T {
 		if (!obj || typeof obj !== 'object') return obj;
 
 		if ('url' in obj && typeof obj.url === 'string') {
-			obj.url = strapiUrl + obj.url;
+			if ((obj.url as string).endsWith('.svg')) obj.url = assetsURL + obj.url;
+			else obj.url = strapiUrl + obj.url;
 		}
 
 		for (const key of Object.keys(obj)) {

@@ -57,7 +57,6 @@ function TechLogos({
 								width: sizeLogo,
 								height: sizeLogo,
 							}}
-							priority
 							sizes="200px"
 							className={styles.image}
 						/>
