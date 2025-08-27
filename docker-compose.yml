@@ -28,6 +28,7 @@ services:
       - ./strapi/.env
     environment:
       NODE_ENV: production
+      PUBLIC_URL: ${STRAPI_PUBLIC_URL}
     ports:
       - "1337:1337"
     restart: unless-stopped

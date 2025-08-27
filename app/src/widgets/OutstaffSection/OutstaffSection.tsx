@@ -59,7 +59,6 @@ export default function OutstaffSection({
 		setActiveIndex(index);
 		stopTimer();
 	};
-	console.log(data?.outstaffCards[0].image.url);
 
 	return (
 		<AnimatedSectionPage className={styles.outstaff}>
