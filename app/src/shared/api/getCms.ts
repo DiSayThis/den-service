@@ -25,6 +25,7 @@ const isBuild = process.env.SKIP_STRAPI_FETCH === 'true';
 
 function normalizeImages<T>(data: T): T {
 	if (!data) return data;
+	console.log(assetsURL);
 
 	const replacer = (obj: any): any => {
 		if (!obj || typeof obj !== 'object') return obj;
