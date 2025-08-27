@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'http',
+				hostname: 'ndt.band',
+				port: '1337',
+				pathname: '/uploads/**',
+			},
+			{
+				protocol: 'http',
 				hostname: '**',
 			},
 			{

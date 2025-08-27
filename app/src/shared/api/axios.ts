@@ -12,11 +12,9 @@ const axiosOptions: CreateAxiosDefaults = {
 
 export const axiosClassic = axios.create(axiosOptions);
 
-const isServer = typeof window === 'undefined';
+// const isServer = typeof window === 'undefined';
 
-const baseURL = isServer
-	? (process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://localhost:1337') + API_URL
-	: process.env.NEXT_PUBLIC_STRAPI_ASSETS_URL + API_URL;
+const baseURL = (process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://localhost:1337') + API_URL;
 
 export const cms = axios.create({
 	baseURL,

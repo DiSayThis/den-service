@@ -1,8 +1,6 @@
-const isServer = typeof window === 'undefined';
+// const isServer = typeof window === 'undefined';
 
-const baseURL = isServer
-	? (process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://localhost:1337') + '/api'
-	: process.env.NEXT_PUBLIC_STRAPI_ASSETS_URL + '/api';
+const baseURL = (process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://localhost:1337') + '/api';
 const isBuild = process.env.SKIP_STRAPI_FETCH === 'true';
 
 export async function fetchCMS<T = any>(endpoint: string): Promise<T | null> {

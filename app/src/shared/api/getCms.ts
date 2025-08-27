@@ -20,19 +20,16 @@ import {
 
 const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://localhost:1337';
 const baseURL = strapiUrl + '/api';
-const assetsURL = process.env.NEXT_PUBLIC_STRAPI_ASSETS_URL ?? 'http://localhost:1337';
 const isBuild = process.env.SKIP_STRAPI_FETCH === 'true';
 
 function normalizeImages<T>(data: T): T {
 	if (!data) return data;
-	console.log(assetsURL);
 
 	const replacer = (obj: any): any => {
 		if (!obj || typeof obj !== 'object') return obj;
 
 		if ('url' in obj && typeof obj.url === 'string') {
-			if ((obj.url as string).endsWith('.svg')) obj.url = assetsURL + obj.url;
-			else obj.url = strapiUrl + obj.url;
+			obj.url = '/api/asset' + obj.url;
 		}
 
 		for (const key of Object.keys(obj)) {
