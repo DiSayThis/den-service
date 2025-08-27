@@ -1,9 +1,10 @@
 version: "3.9"
+
 services:
   web:
     build:
-      context: ./app #https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing.git #./app
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.web
       target: runner
     environment:
       NODE_ENV: production
@@ -20,13 +21,13 @@ services:
 
   strapi:
     build:
-      context: ./strapi #https://${GITHUB_TOKEN}@github.com/DiSayThis/den-landing-strapi.git #./strapi
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.strapi
       target: runner
     env_file:
       - ./strapi/.env
     environment:
-      - NODE_ENV=production
+      NODE_ENV: production
     ports:
       - "1337:1337"
     restart: unless-stopped
