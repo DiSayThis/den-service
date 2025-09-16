@@ -152,6 +152,26 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TestAnswer extends Struct.ComponentSchema {
+  collectionName: 'components_test_answers';
+  info: {
+    displayName: 'answer';
+  };
+  attributes: {
+    faq: Schema.Attribute.Text;
+    multiplication: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
+    plus: Schema.Attribute.BigInteger;
+    title: Schema.Attribute.Text;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -166,6 +186,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'test.answer': TestAnswer;
     }
   }
 }

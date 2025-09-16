@@ -51,6 +51,7 @@ interface IHeroData {
 	id: number;
 	documentId: string;
 	title: string;
+	backgroundText?: string;
 	description: string;
 	buttonText: string;
 	createdAt: string;
@@ -300,6 +301,15 @@ interface IReviews {
 	data: IReview[];
 }
 
+interface IHeadHunterSection {
+	data: IHeadHunterText;
+}
+interface IHeadHunterText {
+	title: string;
+	description: string;
+	buttonText: string;
+}
+
 // Modal Sections
 
 interface IModalData {
@@ -346,6 +356,7 @@ interface IApiData {
 	modalHh: IModalData;
 	modalKp: IModalData;
 	modalOutstaff: IModalData;
+	hhText: IHeadHunterText;
 }
 
 interface ISocialLinkData {
@@ -357,6 +368,8 @@ interface ISocialLink {
 }
 
 export type {
+	IHeadHunterSection,
+	IHeadHunterText,
 	ISocialLink,
 	ISocialLinkData,
 	IApiData,

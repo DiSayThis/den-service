@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "heroes",
+  "collectionName": "head_hunter_sections",
   "info": {
-    "singularName": "hero",
-    "pluralName": "heroes",
-    "displayName": "Hero"
+    "singularName": "head-hunter-section",
+    "pluralName": "head-hunter-sections",
+    "displayName": "HeadHunterSection"
   },
   "options": {
     "draftAndPublish": true
@@ -12,17 +12,12 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "description": {
       "type": "richtext"
     },
     "buttonText": {
-      "type": "string",
-      "required": true
-    },
-    "backgroundText": {
       "type": "string"
     }
   }

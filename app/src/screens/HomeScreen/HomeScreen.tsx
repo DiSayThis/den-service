@@ -7,6 +7,7 @@ import AboutUsSection from '@/widgets/AboutUsSection';
 import CallToAction from '@/widgets/CallToAction';
 import DemoSlideShow from '@/widgets/DemoSlideShow';
 import DigitsSection from '@/widgets/DigitsSection';
+import HeadHunterSection from '@/widgets/HeadHunterSection';
 import HeroAnimatedSection from '@/widgets/HeroAnimatedSection';
 import HeroSection from '@/widgets/HeroSection';
 import OutstaffSection from '@/widgets/OutstaffSection';
@@ -41,6 +42,7 @@ const HomeScreen: FC = async () => {
 								images={card?.images}
 							/>
 						))}
+					<HeadHunterSection text={data.hhText} modalText={data.modalHh} />
 					<DigitsSection valueArray={data?.digits} />
 					<CallToAction textObject={data?.cta2} />
 					<DemoSlideShow

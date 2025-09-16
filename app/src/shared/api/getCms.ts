@@ -5,6 +5,7 @@ import {
 	ICTA2,
 	IDigits,
 	IEndHero,
+	IHeadHunterSection,
 	IHero,
 	IModalHh,
 	IModalKp,
@@ -87,6 +88,7 @@ export async function getCMS(): Promise<IApiData> {
 		outstaff,
 		service,
 		slideshow,
+		hhText,
 	] = await Promise.all([
 		fetchCMS<IHero>('/hero?populate=*').then((res) => res?.data),
 		fetchCMS<IAboutUs>('/about-us?populate=*').then((res) => res?.data),
@@ -106,6 +108,7 @@ export async function getCMS(): Promise<IApiData> {
 		).then((res) => res?.data),
 		fetchCMS<IService>('/service?populate[card][populate]=*').then((res) => res?.data),
 		fetchCMS<ISlideshow>('/demo-slideshow?populate=*').then((res) => res?.data),
+		fetchCMS<IHeadHunterSection>('/head-hunter-section?populate=*').then((res) => res?.data),
 	]);
 
 	return {
@@ -125,6 +128,7 @@ export async function getCMS(): Promise<IApiData> {
 		outstaff: outstaff!,
 		service: service!,
 		slideshow: slideshow!,
+		hhText: hhText!,
 	};
 }
 

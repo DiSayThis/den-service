@@ -1,0 +1,17 @@
+.section {
+	margin: 3rem 0;
+
+	&__card {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 2rem;
+	}
+
+	&__description {
+		font-size: 1.25rem;
+	}
+
+	&__button {
+		font-size: 2rem;
+	}
+}

@@ -242,7 +242,7 @@ const ServicesSection: FC<IServicesSectionProps> = ({ data = { card: servicesCon
 											<ul className={styles.content__list}>
 												{service.artifacts.map((artifact) => (
 													<li key={artifact} className={styles.artifact}>
-														<FontAwesomeIcon name="FaChartBar" size={20} />
+														<FontAwesomeIcon name="FaCode" size={20} />
 														<span>{artifact}</span>
 													</li>
 												))}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_test_answers",
+  "info": {
+    "displayName": "answer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "faq": {
+      "type": "text"
+    },
+    "plus": {
+      "type": "biginteger"
+    },
+    "multiplication": {
+      "type": "decimal",
+      "default": 1,
+      "min": 1
+    }
+  },
+  "config": {}
+}

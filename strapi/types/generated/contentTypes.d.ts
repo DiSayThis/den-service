@@ -548,6 +548,37 @@ export interface ApiEndHeroEndHero extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHeadHunterSectionHeadHunterSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'head_hunter_sections';
+  info: {
+    displayName: 'HeadHunterSection';
+    pluralName: 'head-hunter-sections';
+    singularName: 'head-hunter-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::head-hunter-section.head-hunter-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroHero extends Struct.SingleTypeSchema {
   collectionName: 'heroes';
   info: {
@@ -559,6 +590,7 @@ export interface ApiHeroHero extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    backgroundText: Schema.Attribute.String;
     buttonText: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1417,6 +1449,7 @@ declare module '@strapi/strapi' {
       'api::demo-slideshow.demo-slideshow': ApiDemoSlideshowDemoSlideshow;
       'api::digit.digit': ApiDigitDigit;
       'api::end-hero.end-hero': ApiEndHeroEndHero;
+      'api::head-hunter-section.head-hunter-section': ApiHeadHunterSectionHeadHunterSection;
       'api::hero.hero': ApiHeroHero;
       'api::modal-head-hunter.modal-head-hunter': ApiModalHeadHunterModalHeadHunter;
       'api::modal-kp.modal-kp': ApiModalKpModalKp;

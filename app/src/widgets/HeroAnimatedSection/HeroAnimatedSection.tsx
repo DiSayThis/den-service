@@ -27,7 +27,7 @@ const HeroAnimatedSection: FC<IHeroAnimatedSectionProps> = ({ text, modalText })
 		<section className={styles.hero}>
 			{/* Фон */}
 			<div className={styles.background}>
-				<BackgroundMarquee text="Develop and quality" />
+				<BackgroundMarquee text={text?.backgroundText ?? 'Develop and quality'} />
 			</div>
 			{/* Передний слой */}
 			<div className={styles.foreground}>
