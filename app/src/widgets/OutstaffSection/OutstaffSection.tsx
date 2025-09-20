@@ -60,6 +60,10 @@ export default function OutstaffSection({
 		stopTimer();
 	};
 
+	const [selectedHours, setSelectedHours] = useState(0);
+	const onChangeHours = (hours: number) => {
+		setSelectedHours(hours);
+	};
 	return (
 		<AnimatedSectionPage className={styles.outstaff}>
 			<div className={styles.outstaff__container}>
@@ -121,6 +125,7 @@ export default function OutstaffSection({
 						<Card className={styles.calculator}>
 							<WorkTimeCalculator
 								{...outstaffRoles[activeIndex]?.calculation}
+								onChangeHours={onChangeHours}
 								buttonClick={handleOpenModal}
 								onClick={stopTimer}
 							/>
@@ -194,7 +199,12 @@ export default function OutstaffSection({
 					onSubmit={handleCloseModal}
 					text={
 						dataModal ?? {
-							title: 'Подобрать специалиста: ' + outstaffRoles[activeIndex]?.title,
+							title:
+								'Подобрать специалиста: ' +
+								outstaffRoles[activeIndex]?.title +
+								' на ' +
+								selectedHours +
+								' часов',
 							description:
 								'Профессионалы своего дела уже готовы вам помочь. Можете файлом приложить ТЗ или требования.',
 						}
