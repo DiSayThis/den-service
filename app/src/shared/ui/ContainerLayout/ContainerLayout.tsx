@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { getSocialLinkCMS } from '@/shared/api/getCms';
 import Footer from '@/widgets/Footer';
 import Header from '@/widgets/Header';
 
@@ -8,7 +9,7 @@ interface IContainerLayoutProps {
 }
 
 const ContainerLayout: FC<IContainerLayoutProps> = async ({ children }) => {
-	const links = undefined;
+	const links = await getSocialLinkCMS();
 
 	return (
 		<>

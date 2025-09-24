@@ -17,6 +17,7 @@ import {
 	IReviews,
 	IService,
 	ISlideshow,
+	ISocialLink,
 } from '../types/typesStrapi';
 
 const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://localhost:1337';
@@ -132,4 +133,10 @@ export async function getCMS(): Promise<IApiData> {
 	};
 }
 
-export async function getSocialLinkCMS() {}
+export async function getSocialLinkCMS() {
+	const [links] = await Promise.all([
+		fetchCMS<ISocialLink>('/social-link?populate=*').then((res) => res?.data),
+	]);
+
+	return links!;
+}
