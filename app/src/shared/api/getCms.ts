@@ -149,13 +149,13 @@ export async function getSocialLinkCMS() {
 		]);
 
 		if (links.status === 'fulfilled') {
-			return links.value ?? [];
+			return links.value;
 		}
 
 		console.error('Ошибка при загрузке соц. ссылок из CMS:', links.reason);
-		return [];
+		return undefined;
 	} catch (error) {
 		console.error('Критическая ошибка getSocialLinkCMS:', error);
-		return [];
+		return undefined;
 	}
 }

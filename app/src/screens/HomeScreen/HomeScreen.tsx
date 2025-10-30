@@ -45,13 +45,15 @@ const HomeScreen: FC = async () => {
 					<HeadHunterSection text={data.hhText} modalText={data.modalHh} />
 					<DigitsSection valueArray={data?.digits} />
 					<CallToAction textObject={data?.cta2} />
-					<DemoSlideShow
-						imgPathArray={
-							Array.isArray(data?.slideshow.images)
-								? data?.slideshow.images.map((img) => img.url)
-								: []
-						}
-					/>
+					{data?.slideshow && (
+						<DemoSlideShow
+							imgPathArray={
+								Array.isArray(data?.slideshow.images)
+									? data?.slideshow.images.map((img) => img.url)
+									: []
+							}
+						/>
+					)}
 					<AboutUsSection data={data?.aboutUs} />
 					<ReviewsSection data={data?.reviews} />
 					<PartnersSection direction="right" data={data?.partners} />
