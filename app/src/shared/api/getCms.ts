@@ -72,25 +72,7 @@ async function fetchCMS<T>(endpoint: string): Promise<T | null> {
  * Главная функция: получить все данные из Strapi
  */
 export async function getCMS(): Promise<IApiData> {
-	const [
-		hero,
-		aboutUs,
-		digits,
-		cta1,
-		cta2,
-		endHero,
-		problems,
-		partners,
-		prodDemos,
-		reviews,
-		modalHh,
-		modalKp,
-		modalOutstaff,
-		outstaff,
-		service,
-		slideshow,
-		hhText,
-	] = await Promise.all([
+	const endpoints = [
 		fetchCMS<IHero>('/hero?populate=*').then((res) => res?.data),
 		fetchCMS<IAboutUs>('/about-us?populate=*').then((res) => res?.data),
 		fetchCMS<IDigits>('/digit?populate=*').then((res) => res?.data.digits),
@@ -110,33 +92,70 @@ export async function getCMS(): Promise<IApiData> {
 		fetchCMS<IService>('/service?populate[card][populate]=*').then((res) => res?.data),
 		fetchCMS<ISlideshow>('/demo-slideshow?populate=*').then((res) => res?.data),
 		fetchCMS<IHeadHunterSection>('/head-hunter-section?populate=*').then((res) => res?.data),
-	]);
+	];
+
+	const results = await Promise.allSettled(endpoints);
+
+	// Преобразуем результаты: ошибки -> null
+	const safe = results.map((r) =>
+		r.status === 'fulfilled' ? r.value : (console.warn('❌ Failed CMS request', r.reason), null),
+	);
+
+	const [
+		hero,
+		aboutUs,
+		digits,
+		cta1,
+		cta2,
+		endHero,
+		problems,
+		partners,
+		prodDemos,
+		reviews,
+		modalHh,
+		modalKp,
+		modalOutstaff,
+		outstaff,
+		service,
+		slideshow,
+		hhText,
+	] = safe;
 
 	return {
-		hero: hero!,
-		aboutUs: aboutUs!,
-		digits: digits!,
-		cta1: cta1!,
-		cta2: cta2!,
-		endHero: endHero!,
-		problems: problems!,
-		partners: partners!,
-		prodDemos: prodDemos!,
-		reviews: reviews!,
-		modalHh: modalHh!,
-		modalKp: modalKp!,
-		modalOutstaff: modalOutstaff!,
-		outstaff: outstaff!,
-		service: service!,
-		slideshow: slideshow!,
-		hhText: hhText!,
-	};
+		hero,
+		aboutUs,
+		digits,
+		cta1,
+		cta2,
+		endHero,
+		problems,
+		partners,
+		prodDemos,
+		reviews,
+		modalHh,
+		modalKp,
+		modalOutstaff,
+		outstaff,
+		service,
+		slideshow,
+		hhText,
+	} as IApiData;
 }
 
 export async function getSocialLinkCMS() {
-	const [links] = await Promise.all([
-		fetchCMS<ISocialLink>('/social-link?populate=*').then((res) => res?.data),
-	]);
+	try {
+		const [links] = await Promise.allSettled([
+			fetchCMS<ISocialLink>('/social-link?populate=*').then((res) => res?.data),
+		]);
 
-	return links!;
+		if (links.status === 'fulfilled') {
+			return links.value ?? [];
+		}
+
+		console.error('Ошибка при загрузке соц. ссылок из CMS:', links.reason);
+		return [];
+	} catch (error) {
+		console.error('Критическая ошибка getSocialLinkCMS:', error);
+		return [];
+	}
 }
