@@ -47,10 +47,12 @@ async function fetchCMS<T>(endpoint: string): Promise<T | null> {
 	if (isBuild) return null;
 
 	try {
+		console.log(`${baseURL}${endpoint}`);
+
 		const res = await fetch(`${baseURL}${endpoint}`, {
 			headers: {
 				Accept: 'application/json',
-				Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+				Authorization: process.env.STRAPI_API_TOKEN ? `Bearer ${process.env.STRAPI_API_TOKEN}` : '',
 			},
 			next: { revalidate: 60 },
 		});
